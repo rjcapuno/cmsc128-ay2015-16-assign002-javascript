@@ -1,0 +1,42 @@
+<DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+<title>Programming assignment 002</title>
+</head>
+
+<script type="text/javascript">
+  function getHammingDistance() {
+    var str1;
+    var str2;
+    var i;
+    var cnt = 0;
+
+    str1 = document.getElementById("string1").value;
+    str2 = document.getElementById("string2").value;
+    if(str1.length != str2.length) {
+      alert("String length not equal!");
+    } else {
+      for(i = 0; i < str1.length; i++) {
+        if(str1.charAt(i) != str2.charAt(i)) {
+          cnt++;
+        }
+      }
+      alert("Hamming Distance: " + cnt);
+    }
+
+
+  }
+</script>
+
+<body>
+
+<h1>Hamming Distance</h1>
+<form>
+  String 1: <input type="text" name="string1" id="string1"><br>
+  String 2: <input type="text" name="string2" id="string2"><br>
+  <input id="hammingDistance" type="button" value="Submit" onclick="getHammingDistance();" />
+</form>
+
+
+</body>
+</html>
