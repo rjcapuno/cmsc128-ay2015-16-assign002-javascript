@@ -23,9 +23,32 @@
       }
       alert("Hamming Distance: " + cnt);
     }
-
-
   }
+
+  function countSubstrPattern() {
+    var str;
+    var pattern;
+    var i;
+    var cnt = 0;
+
+    str = document.getElementById("string3").value;
+    pattern = document.getElementById("string4").value;
+
+    if(str.length <= 0) {
+      alert("No input");
+    } else {
+
+    for(i = 0; i < str.length - pattern.length + 1; i++) {
+      if(str.substring(i, i + pattern.length) == pattern) {
+        cnt++;
+      }
+    }
+
+    alert("Substring Pattern count: " + cnt);
+  }
+  }
+
+
 </script>
 
 <body>
@@ -35,6 +58,13 @@
   String 1: <input type="text" name="string1" id="string1"><br>
   String 2: <input type="text" name="string2" id="string2"><br>
   <input id="hammingDistance" type="button" value="Submit" onclick="getHammingDistance();" />
+</form>
+
+<h1>Substring Pattern</h1>
+<form>
+  String: <input type="text" name="string3" id="string3"><br>
+  Pattern: <input type="text" name="string4" id="string4"><br>
+  <input id="hammingDistance" type="button" value="Submit" onclick="countSubstrPattern();" />
 </form>
 
 
