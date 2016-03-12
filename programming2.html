@@ -82,6 +82,7 @@
     var str;
     var pos;
     var i;
+    var len;
     var cnt = 0;
     var g = 0;
     var c = 0;
@@ -95,7 +96,8 @@
       alert("Invalid position");
     } else {
       str = str.substring(0, pos);
-      for(i = 0; i < str.legth; i++) {
+      len = str.length;
+      for(i = 0; i < len; i++) {
         if(str.charAt(i) == "G") {
           g++;
         }
@@ -103,7 +105,7 @@
           c++;
         }
       }
-      alert(g - c);
+      alert("Skew: " + (g-c));
     }
   }
 
