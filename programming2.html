@@ -72,11 +72,40 @@
 
     if(cnt == str.length) {
       alert("True");
-    }else{
+    } else {
       alert("False");
     }
   }
 }
+
+  function skew() {
+    var str;
+    var pos;
+    var i;
+    var cnt = 0;
+    var g = 0;
+    var c = 0;
+
+    str = document.getElementById("string7").value;
+    pos = document.getElementById("string8").value;
+
+    if(str.length <= 0 || pos.length <= 0) {
+      alert("No input");
+    } else if (pos < 1) {
+      alert("Invalid position");
+    } else {
+      str = str.substring(0, pos);
+      for(i = 0; i < str.legth; i++) {
+        if(str.charAt(i) == "G") {
+          g++;
+        }
+        if(str.charAt(i) == "C") {
+          c++;
+        }
+      }
+      alert(g - c);
+    }
+  }
 
 </script>
 
@@ -103,6 +132,12 @@
   <input id="isValidString" type="button" value="Submit" onclick="validString();" />
 </form>
 
+<h1>Skew</h1>
+<form>
+  String: <input type="text" name="string7" id="string7"><br>
+  Position: <input type="text" name="string8" id="string8"><br>
+  <input id="getSkew" type="button" value="Submit" onclick="skew();" />
+</form>
 
 </body>
 </html>
